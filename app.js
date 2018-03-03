@@ -32,5 +32,18 @@
         console.log(error);
         // [END_EXCLUDE]
       });
+    },
+
+      signIn : function() {
+      
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("pass").value;
+      alert(email + " , " + password);
+      
+      var signStatus = firebase.auth().signInWithEmailAndPassword(email, password);
+
+      signStatus.catch(err) {
+        console.log("Sign In failed");
+      }
     }
-  }
+  };
